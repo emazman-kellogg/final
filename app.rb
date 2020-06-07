@@ -15,5 +15,26 @@ before { puts; puts "--------------- NEW REQUEST ---------------"; puts }       
 after { puts; }                                                                       #
 #######################################################################################
 
-# events_table = DB.from(:events)
+weeks_table = DB.from(:weeks)
+classes_table = DB.from(:classes)
 # rsvps_table = DB.from(:rsvps)
+# riders_table = DB.from(:riders)
+# stats_table = DB.from(:stats)
+
+get "/" do 
+    @weeks = weeks_table.all
+    puts @weeks.inspect
+    view "weeks"
+end
+
+get "/weeks/:id" do
+    @week = weeks_table.where(:id => params["id"]).to_a[0]
+    @classesmonday= classes_table.where(:week_id => params["id"], :weekday=>"Monday").to_a
+    @classestuesday= classes_table.where(:week_id => params["id"], :weekday=>"Tuesday").to_a
+    @classeswednesday= classes_table.where(:week_id => params["id"], :weekday=>"Wednesday").to_a
+    @classesthursday= classes_table.where(:week_id => params["id"], :weekday=>"Thursday").to_a
+    @classesfriday= classes_table.where(:week_id => params["id"], :weekday=>"Friday").to_a
+    @classessaturday= classes_table.where(:week_id => params["id"], :weekday=>"Saturday").to_a
+    puts @week.inspect
+    view "week"
+end

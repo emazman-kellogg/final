@@ -1,0 +1,6 @@
+<h1>Class Schedule</h1>
+<ul class="list-unstyled">
+    <% for weekx in @weeks %>
+    <li><a href="/weeks/<%= weekx[:id] %>"><%= weekx[:name] %></a></li>
+    <% end %>
+</ul>
