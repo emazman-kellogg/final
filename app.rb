@@ -38,3 +38,10 @@ get "/weeks/:id" do
     puts @week.inspect
     view "week"
 end
+
+get "/weeks/:id/class" do
+    @class = classes_table.where(:id => params["id"]).to_a[0]
+    puts @class.inspect
+    view "class"
+end    
+

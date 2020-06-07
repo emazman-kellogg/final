@@ -20,6 +20,7 @@ DB.create_table! :classes do
   String :weights
   String :date
   String :weekday
+  String :link, text: true
 end
 
 DB.create_table! :rsvps do
@@ -66,7 +67,8 @@ classes_table.insert(week_id: "1",
                     instructor: "Kendall Toole",
                     weights: "No",
                     date: "June 8 2020",
-                    weekday: "Monday")
+                    weekday: "Monday",
+                    link: "https://members.onepeloton.com/classes/cycling?modal=classDetailsModal&classId=05410c15d3604bc4b2d9837b9b6ce662")
 
 classes_table.insert(week_id: "1",
                     title: "10 min Arms Toning", 
@@ -75,7 +77,8 @@ classes_table.insert(week_id: "1",
                     instructor: "Oliva Amato",
                     weights: "Yes",
                     date: "June 8 2020",
-                    weekday: "Monday")                    
+                    weekday: "Monday",
+                    link: "https://members.onepeloton.com/classes/strength?modal=classDetailsModal&classId=9334fc8af4fe4fcbabbeebb9a26e4728")                    
 
 classes_table.insert(week_id: "1",
                     title: "30 min HIIT & Hills Ride", 
@@ -84,7 +87,8 @@ classes_table.insert(week_id: "1",
                     instructor: "Hannah Frankson",
                     weights: "No",
                     date: "June 9 2020",
-                    weekday: "Tuesday")
+                    weekday: "Tuesday",
+                    link: "https://members.onepeloton.com/classes/cycling?duration=1800&class_type_id=7579b9edbdf9464fa19eb58193897a73&sort=original_air_time&desc=true&modal=classDetailsModal&classId=163b743350364cdfbeb43f0b554c9cc9")
 
 classes_table.insert(week_id: "1",
                     title: "5 min Core Strength", 
@@ -93,7 +97,8 @@ classes_table.insert(week_id: "1",
                     instructor: "Cody Rigsby",
                     weights: "No",
                     date: "June 9 2020",
-                    weekday: "Tuesday")                    
+                    weekday: "Tuesday",
+                    link: "https://members.onepeloton.com/classes/strength?duration=300&instructor_id=baf5dfb4c6ac4968b2cb7f8f8cc0ef10&sort=original_air_time&desc=true&modal=classDetailsModal&classId=2393533387b147fa868daf06a83d4891")                    
 
 classes_table.insert(week_id: "1",
                     title: "20 min Peloton All-Star Ride", 
@@ -102,7 +107,8 @@ classes_table.insert(week_id: "1",
                     instructor: "Robin Arzon",
                     weights: "No",
                     date: "June 10 2020",
-                    weekday: "Wednesday")
+                    weekday: "Wednesday",
+                    link:"https://members.onepeloton.com/classes/cycling?instructor_id=c406f36aa2a44a5baf8831f8b92f6920&sort=original_air_time&desc=true&modal=classDetailsModal&classId=bb87ae4e531342bdbc915e30a63972c3")
 
 classes_table.insert(week_id: "1",
                     title: "20 min Listening Party", 
@@ -111,7 +117,8 @@ classes_table.insert(week_id: "1",
                     instructor: "Emma Lovewell",
                     weights: "No",
                     date: "June 10 2020",
-                    weekday: "Wednesday")
+                    weekday: "Wednesday",
+                    link: "https://members.onepeloton.com/classes/cycling?duration=1200&instructor_id=f6f2d613dc344e4bbf6428cd34697820&sort=original_air_time&desc=true&modal=classDetailsModal&classId=62eb733128054a828bb50011cdbeda68")
 
 classes_table.insert(week_id: "1",
                     title: "5 min Post-Ride Stretch", 
@@ -120,7 +127,8 @@ classes_table.insert(week_id: "1",
                     instructor: "Matt Wilpers",
                     weights: "No",
                     date: "June 10 2020",
-                    weekday: "Wednesday")                    
+                    weekday: "Wednesday",
+                    link: "https://members.onepeloton.com/classes/stretching?duration=300&sort=original_air_time&desc=true&modal=classDetailsModal&classId=959d2701ff9945be92fa895ce0d3fbb5")                    
 
 classes_table.insert(week_id: "1",
                     title: "30 min 2000s Rock Ride", 
@@ -129,7 +137,8 @@ classes_table.insert(week_id: "1",
                     instructor: "Emma Lovewell",
                     weights: "No",
                     date: "June 11 2020",
-                    weekday: "Thursday")
+                    weekday: "Thursday",
+                    link: "https://members.onepeloton.com/classes/cycling?duration=1800&instructor_id=f6f2d613dc344e4bbf6428cd34697820&sort=original_air_time&desc=true&modal=classDetailsModal&classId=ee584452cd91483cb1c96a0647d2780a")
                     
 classes_table.insert(week_id: "1",
                     title: "30 min Yoga Flow", 
@@ -138,7 +147,8 @@ classes_table.insert(week_id: "1",
                     instructor: "Denis Morton",
                     weights: "No",
                     date: "June 11 2020",
-                    weekday: "Thursday")                    
+                    weekday: "Thursday",
+                    link: "https://members.onepeloton.com/classes/yoga?duration=1800&class_type_id=56c834e143d4423799fc1d3f3fd70ec8&sort=original_air_time&desc=true&modal=classDetailsModal&classId=e2c3683fac6447b293701aed9a12d239")                    
 
 classes_table.insert(week_id: "1",
                     title: "45 min Intervals & Arms Ride", 
@@ -147,7 +157,8 @@ classes_table.insert(week_id: "1",
                     instructor: "Cody Rigsby",
                     weights: "Yes",
                     date: "June 12 2020",
-                    weekday: "Friday")
+                    weekday: "Friday",
+                    link: "https://members.onepeloton.com/classes/cycling?duration=2700&instructor_id=baf5dfb4c6ac4968b2cb7f8f8cc0ef10&sort=original_air_time&desc=true")
                     
 classes_table.insert(week_id: "1",
                     title: "10 min Peace Meditation", 
@@ -156,7 +167,8 @@ classes_table.insert(week_id: "1",
                     instructor: "Chelsea Jackson",
                     weights: "No",
                     date: "June 12 2020",
-                    weekday: "Friday")                       
+                    weekday: "Friday",
+                    link: "https://members.onepeloton.com/classes/meditation?modal=classDetailsModal&classId=3925648d355c4565b97604cb7b52027d")                       
                     
 classes_table.insert(week_id: "1",
                     title: "60 min Classic Rock Ride", 
@@ -165,7 +177,8 @@ classes_table.insert(week_id: "1",
                     instructor: "Jennifer Jacobs",
                     weights: "No",
                     date: "June 13 2020",
-                    weekday: "Saturday")    
+                    weekday: "Saturday",
+                    link: "https://members.onepeloton.com/classes/cycling?duration=3600&instructor_id=3622eff359454fb7bada6d1f3fc0976c&sort=original_air_time&desc=true&modal=classDetailsModal&classId=d36c486d704746ae9345dc03d9b12d41")    
                     
                     
                     
