@@ -17,9 +17,10 @@ after { puts; }                                                                 
 
 weeks_table = DB.from(:weeks)
 classes_table = DB.from(:classes)
-# rsvps_table = DB.from(:rsvps)
+rsvps_table = DB.from(:rsvps)
+stats_table = DB.from(:stats)
 # riders_table = DB.from(:riders)
-# stats_table = DB.from(:stats)
+
 
 get "/" do 
     @weeks = weeks_table.all
@@ -47,3 +48,24 @@ get "/weeks/:id/class/:class_id" do
     view "class"
 end    
 
+get "/weeks/:id/class/:class_id" do
+    @week = weeks_table.where(:id => params["id"]).to_a[0]
+    @class = classes_table.where(:id => params["class_id"]).to_a[0]
+    puts @week.inspect
+    puts @class.inspect
+    view "class"
+end   
+
+get "/weeks/:id/class/:class_id/rsvps/create" do
+    @week = weeks_table.where(:id => params["id"]).to_a[0]
+    @class = classes_table.where(:id => params["class_id"]).to_a[0]
+    puts params.inspect
+    "Got it!"
+end 
+
+get "/weeks/:id/class/:class_id/stats/create" do
+    @week = weeks_table.where(:id => params["id"]).to_a[0]
+    @class = classes_table.where(:id => params["class_id"]).to_a[0]
+    puts params.inspect
+    "Got it!"
+end 
