@@ -31,7 +31,7 @@ DB.create_table! :rsvps do
   String :comments, text: true
 end
 
-DB.create_table! :riders do
+DB.create_table! :users do
   primary_key :id
   String :name
   String :email
@@ -43,9 +43,9 @@ DB.create_table! :stats do
   primary_key :id
   foreign_key :class_id
   foreign_key :rider_id  
-  String :class_rating
-  String :total_output
-  String :avg_output
+  String :class_rating, integer: true
+  String :total_output, integer: true
+  String :avg_output, integer: true
 end
 
 # Insert initial (seed) data
