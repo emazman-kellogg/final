@@ -35,12 +35,14 @@ get "/weeks/:id" do
     @classesthursday= classes_table.where(:week_id => params["id"], :weekday=>"Thursday").to_a
     @classesfriday= classes_table.where(:week_id => params["id"], :weekday=>"Friday").to_a
     @classessaturday= classes_table.where(:week_id => params["id"], :weekday=>"Saturday").to_a
-    puts @week.inspect
+    puts @classesmonday.inspect
     view "week"
 end
 
-get "/weeks/:id/class" do
-    @class = classes_table.where(:id => params["id"]).to_a[0]
+get "/weeks/:id/class/:class_id" do
+    @week = weeks_table.where(:id => params["id"]).to_a[0]
+    @class = classes_table.where(:id => params["class_id"]).to_a[0]
+    puts @week.inspect
     puts @class.inspect
     view "class"
 end    

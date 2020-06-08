@@ -12,7 +12,7 @@
         <h3 class="mt-5">Monday</h3>
         <ul class="list-unstyled">
             <% for classx in @classesmonday %>
-                <li><a href="<%= classx[:link] %>"><%= classx[:title] %></a> 
+                <li><a href="/weeks/<%= classx[:week_id] %>/class/<%= classx[:id]%>"><%= classx[:title] %></a> 
                 <img class="img-fluid" src="/images/<%= classx[:type]%>.PNG">
                 </li>
                 <% end %>
@@ -23,7 +23,7 @@
          <h3 class="mt-5">Tuesday</h3>
         <ul class="list-unstyled">
             <% for classx in @classestuesday %>
-                <li><a href="<%= classx[:link] %>"><%= classx[:title] %></a> 
+                <li><a href="/weeks/<%= classx[:week_id] %>/class/<%= classx[:id]%>"><%= classx[:title] %></a>   
                 <img class="img-fluid" src="/images/<%= classx[:type]%>.PNG">
                 </li>
                 <% end %>
@@ -34,7 +34,7 @@
          <h3 class="mt-5">Wednesday</h3>
         <ul class="list-unstyled">
             <% for classx in @classeswednesday %>
-                <li><a href="<%= classx[:link] %>"><%= classx[:title] %></a> 
+                <li><a href="/weeks/<%= classx[:week_id] %>/class/<%= classx[:id]%>"><%= classx[:title] %></a>   
                 <img class="img-fluid" src="/images/<%= classx[:type]%>.PNG">
                 </li>
                 <% end %>
@@ -47,7 +47,7 @@
          <h3 class="mt-5">Thursday</h3>
         <ul class="list-unstyled">
             <% for classx in @classesthursday %>
-                <li><a href="<%= classx[:link] %>"><%= classx[:title] %></a> 
+                <li><a href="/weeks/<%= classx[:week_id] %>/class/<%= classx[:id]%>"><%= classx[:title] %></a>   
                 <img class="img-fluid" src="/images/<%= classx[:type]%>.PNG">
                 </li>
                 <% end %>
@@ -58,7 +58,7 @@
          <h3 class="mt-5">Friday</h3>
         <ul class="list-unstyled">
             <% for classx in @classesfriday %>
-                <li><a href="<%= classx[:link] %>"><%= classx[:title] %></a> 
+                <li><a href="/weeks/<%= classx[:week_id] %>/class/<%= classx[:id]%>"><%= classx[:title] %></a>   
                 <img class="img-fluid" src="/images/<%= classx[:type]%>.PNG">
                 </li>
                 <% end %>
@@ -69,7 +69,7 @@
          <h3 class="mt-5">Saturday</h3>
         <ul class="list-unstyled">
             <% for classx in @classessaturday %>
-                <li><a href="<%= classx[:link] %>"><%= classx[:title] %></a> 
+                <li><a href="/weeks/<%= classx[:week_id] %>/class/<%= classx[:id]%>"><%= classx[:title] %></a>   
                 <img class="img-fluid" src="/images/<%= classx[:type]%>.PNG">
                 </li>
                 <% end %>           
