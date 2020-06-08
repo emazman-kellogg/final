@@ -2,19 +2,23 @@
   <i class="far fa-calendar"></i>
   <%= @class[:date] %>
 </h3>
-<h1>RSVP for <%= @class[:title] %></h1>
+<h1><%= @class[:instructor]%>'s <%= @class[:title] %></h1>
 
-<h3>Are you going?</h3>
+<h3><%= @class[:description]%></h3>
+<a href="<%= @class[:link] %>"><button class="btn btn-secondary btn-sm">Class Details</button></a>
 
-<form action="/weeks/<%= @week[:id] %>/class/<%= @class[:class_id]%" class="mt-5">
+
+<h3 class="mt-5">RSVP</h3>
+
+<form action="/weeks/<%= @week[:id] %>/class/<%= @class[:class_id]%" class="mt-2">
   <div class="form-group">
     <div class="form-check form-check-inline">
       <input class="form-check-input" type="radio" name="going" value="1">
-      <label class="form-check-label">Yep</label>
+      <label class="form-check-label">Yes</label>
     </div>
     <div class="form-check form-check-inline">
       <input class="form-check-input" type="radio" name="going" value="0">
-      <label class="form-check-label">Nope</label>
+      <label class="form-check-label">No</label>
     </div>
   </div>
   <div class="form-group">
@@ -29,5 +33,5 @@
     <label>Comments</label>
     <textarea class="form-control" name="comments"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Submit RSVP</button>
+  <button type="submit" class="btn btn-primary btn-sm">Submit RSVP</button>
 </form>
