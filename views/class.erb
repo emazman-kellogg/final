@@ -2,10 +2,11 @@
   <i class="far fa-calendar"></i>
   <%= @class[:date] %>
 </h3>
-<h1><%= @class[:instructor]%>'s <%= @class[:title] %></h1>
+<h1><%= @class[:instructor]%>'s <%= @class[:title] %><img class="img-fluid" src="/images/<%= @class[:type]%>.PNG"></h1>
 
 <h3><%= @class[:description]%></h3>
 <a href="<%= @class[:link] %>"><button class="btn btn-secondary btn-sm">Class Details</button></a>
+
 
 
 <h3 class="mt-5">RSVP</h3>
