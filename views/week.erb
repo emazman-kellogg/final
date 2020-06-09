@@ -14,6 +14,7 @@
             <% for classx in @classesmonday %>
                 <li><a href="/weeks/<%= classx[:week_id] %>/class/<%= classx[:id]%>"><%= classx[:title] %></a> 
                 <img class="img-fluid" src="/images/<%= classx[:type]%>.PNG">
+                RSVP: <%= @count %>
                 </li>
                 <% end %>
         </ul>
@@ -25,6 +26,7 @@
             <% for classx in @classestuesday %>
                 <li><a href="/weeks/<%= classx[:week_id] %>/class/<%= classx[:id]%>"><%= classx[:title] %></a>   
                 <img class="img-fluid" src="/images/<%= classx[:type]%>.PNG">
+                RSVP: <%= @count %>
                 </li>
                 <% end %>
         </ul>
@@ -36,6 +38,7 @@
             <% for classx in @classeswednesday %>
                 <li><a href="/weeks/<%= classx[:week_id] %>/class/<%= classx[:id]%>"><%= classx[:title] %></a>   
                 <img class="img-fluid" src="/images/<%= classx[:type]%>.PNG">
+                RSVP: <%= @count %>
                 </li>
                 <% end %>
         </ul>
@@ -49,6 +52,7 @@
             <% for classx in @classesthursday %>
                 <li><a href="/weeks/<%= classx[:week_id] %>/class/<%= classx[:id]%>"><%= classx[:title] %></a>   
                 <img class="img-fluid" src="/images/<%= classx[:type]%>.PNG">
+                RSVP: <%= @count %>
                 </li>
                 <% end %>
         </ul>
@@ -60,6 +64,7 @@
             <% for classx in @classesfriday %>
                 <li><a href="/weeks/<%= classx[:week_id] %>/class/<%= classx[:id]%>"><%= classx[:title] %></a>   
                 <img class="img-fluid" src="/images/<%= classx[:type]%>.PNG">
+                RSVP: <%= @count %>
                 </li>
                 <% end %>
         </ul>
@@ -71,6 +76,7 @@
             <% for classx in @classessaturday %>
                 <li><a href="/weeks/<%= classx[:week_id] %>/class/<%= classx[:id]%>"><%= classx[:title] %></a>   
                 <img class="img-fluid" src="/images/<%= classx[:type]%>.PNG">
+                RSVP: <%= @count %>
                 </li>
                 <% end %>           
         </ul>

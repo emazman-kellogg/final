@@ -63,6 +63,7 @@ get "/weeks/:id" do
     @classesthursday= classes_table.where(:week_id => params["id"], :weekday=>"Thursday").to_a
     @classesfriday= classes_table.where(:week_id => params["id"], :weekday=>"Friday").to_a
     @classessaturday= classes_table.where(:week_id => params["id"], :weekday=>"Saturday").to_a
+    @count = rsvps_table.where(:class_id => params["id"], :going => true).count
     puts @classesmonday.inspect
     view "week"
 end
