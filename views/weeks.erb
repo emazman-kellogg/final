@@ -1,16 +1,21 @@
-<h1>Class Schedule</h1>
+<h1>never sweat alone - a onepeloton fitness community</h1>
+<h3>About Us</h3>
+<p> Quarantining sucks, but if you have a Peloton membership (bike or no bike) come sweat with us! Our moto is never sweat alone, and we don't! We ride Mon-Sat 8 AM EST, and post a new class schedule every week.</p>
+<p><a href="/logins/new" class="btn btn-secondary btn-sm">Sign Up</a> <a href="/users/new" class="btn btn-secondary btn-sm">Sign In</a></p>
+
+<h3>Weekly Class Schedule</h3>
 <ul class="list-unstyled">
     <% for weekx in @weeks %>
     <li><a href="/weeks/<%= weekx[:id] %>"><%= weekx[:name] %></a></li>
     <% end %>
 </ul>
 
-<div class="row">
+<div class="row mt-4">
 <h3>Locations of our community leaders</h3>
 <p> 
 </div>
  
-<div class="row">
+<div class="row mt-4">
 <div class="col text-center">
 <h4>Headquarters - Chicago, IL</h4>
 <iframe
