@@ -46,6 +46,7 @@ DB.create_table! :stats do
   String :class_rating, integer: true
   String :total_output, integer: true
   String :avg_output, integer: true
+  String :comments, text: true
 end
 
 # Insert initial (seed) data

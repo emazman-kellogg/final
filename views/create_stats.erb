@@ -1,2 +1,20 @@
 <h1>Thanks for submitting your performance stats!</h1>
-<p><a href="/weeks/<%= @class[:week_id] %>/class/<%= @class[:id]%>" class="btn btn-primary">Back to Event</a></p>
+<h3><%= @class[:instructor]%>'s <%= @class[:title] %> on <%= @class[:date] %><img class="img-fluid" src="/images/<%= @class[:type]%>.PNG"></h3>
+
+
+<p><a href="/weeks/<%= @class[:week_id] %>" class="btn btn-secondary btn-sm">Back to Class Schedule</a></p>
+
+<h3>See How You Compare</h3>
+<div class="row">
+    <div class="col-sm-9">       
+        <ul><% for stat in @stats %>
+            <% user = @users_table.where(:id => stat[:user_id]).to_a[0] %>
+                    <h5 class="mt-2"><%= user[:name] %></h5>
+                    <li>Class Rating: <%= stat[:class_rating] %></li>
+                    <li>Total Output: <%= stat[:total_output] %></li>
+                    <li>Average Output: <%= stat[:avg_output] %></li>
+                    <li>Comments: <%= stat[:comments] %></li>
+                    </ul>
+                </div>
+            </div>
+        <% end %>

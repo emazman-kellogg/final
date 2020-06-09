@@ -1,2 +1,24 @@
 <h1>Thanks for your RSVP!</h1>
-<p><a href="/weeks/<%= @class[:week_id] %>/class/<%= @class[:id]%>" class="btn btn-primary">Back to Class</a></p>
+
+<h3><%= @class[:instructor]%>'s <%= @class[:title] %> on <%= @class[:date] %><img class="img-fluid" src="/images/<%= @class[:type]%>.PNG"></h3>
+
+
+<p><a href="/weeks/<%= @class[:week_id] %>" class="btn btn-secondary btn-sm">Back to Class Schedule</a></p>
+
+<h3>See Who's Sweating!</h3>
+<div class="row">
+    <div class="col-sm-9">       
+        <% for rsvp in @rsvps %>
+            <% user = @users_table.where(:id => rsvp[:user_id]).to_a[0] %>
+            <div class="media">
+                <% if rsvp[:going] %>
+                    <i class="fas fa-thumbs-up fa-2x mr-3 mt-2"></i>
+                <% else %>
+                    <i class="fas fa-thumbs-down fa-2x mr-3 mt-2"></i>
+                <% end %>
+                <div class="media-body">
+                    <h5 class="mt-2"><%= user[:name] %></h5>
+                    <%= rsvp[:comments] %>
+                </div>
+            </div>
+        <% end %>

@@ -65,6 +65,9 @@ post "/weeks/:id/class/:class_id/rsvps/create" do
     
     @week = weeks_table.where(:id => params["id"]).to_a[0]
     @class = classes_table.where(:id => params["class_id"]).to_a[0]
+    @users_table = users_table
+    @rsvps = rsvps_table.where(:class_id => params["class_id"]).to_a
+    @count = rsvps_table.where(:class_id => params["class_id"], :going => true).count
     puts params.inspect
     view "create_rsvp"
 end 
@@ -75,9 +78,12 @@ post "/weeks/:id/class/:class_id/stats/create" do
                        :user_id => @current_user[:id],                       
                        :class_rating => params["rating"],
                        :total_output => params["total_output"],
-                       :avg_output => params["avg_output"])
+                       :avg_output => params["avg_output"],
+                       :comments => params["comments"])
     @week = weeks_table.where(:id => params["id"]).to_a[0]
     @class = classes_table.where(:id => params["class_id"]).to_a[0]
+    @users_table = users_table
+    @stats = stats_table.where(:class_id => params["class_id"]).to_a
     puts params.inspect
     view "create_stats"
 end 
