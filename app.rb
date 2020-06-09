@@ -58,18 +58,28 @@ end
 
 # Form to create a new RSVP
 post "/weeks/:id/class/:class_id/rsvps/create" do
+        rsvps_table.insert(:class_id => params["class_id"],
+                           :going => params["going"],
+                           :user_id => @current_user[:id],
+                           :comments => params["comments"])
+    
     @week = weeks_table.where(:id => params["id"]).to_a[0]
     @class = classes_table.where(:id => params["class_id"]).to_a[0]
     puts params.inspect
-    "Got it!"
+    view "create_rsvp"
 end 
 
 # Form to create a new performance stat input
 post "/weeks/:id/class/:class_id/stats/create" do
+    stats_table.insert(:class_id => params["class_id"],
+                       :user_id => @current_user[:id],                       
+                       :class_rating => params["rating"],
+                       :total_output => params["total_output"],
+                       :avg_output => params["avg_output"])
     @week = weeks_table.where(:id => params["id"]).to_a[0]
     @class = classes_table.where(:id => params["class_id"]).to_a[0]
     puts params.inspect
-    "Got it!"
+    view "create_stats"
 end 
 
 # Receiving end of new RSVP form
@@ -82,7 +92,7 @@ end
 
 # Receiving end of new user form
 post "/users/create" do
-    params.inspect
+    puts params.inspect
     users_table.insert(:name => params["name"],
                        :email => params["email"],
                        :password => BCrypt::Password.create(params["password"]))
@@ -96,7 +106,7 @@ end
 
 # Receiving end of login form
 post "/logins/create" do
-    puts params
+    puts params.inspect
     email_entered = params["email"]
     password_entered = params["password"]
     # SELECT * FROM users WHERE email = email_entered

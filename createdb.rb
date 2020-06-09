@@ -26,7 +26,7 @@ end
 DB.create_table! :rsvps do
   primary_key :id
   foreign_key :class_id
-  foreign_key :rider_id
+  foreign_key :user_id
   Boolean :going
   String :comments, text: true
 end
@@ -42,7 +42,7 @@ end
 DB.create_table! :stats do
   primary_key :id
   foreign_key :class_id
-  foreign_key :rider_id  
+  foreign_key :user_id  
   String :class_rating, integer: true
   String :total_output, integer: true
   String :avg_output, integer: true
