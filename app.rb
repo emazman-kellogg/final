@@ -15,6 +15,13 @@ before { puts; puts "--------------- NEW REQUEST ---------------"; puts }       
 after { puts; }                                                                       #
 #######################################################################################
 
+# read your API credentials from environment variables
+account_sid = ENV["AC6bc82340e33c7c4f6d919b912ca14f68"]
+auth_token = ENV["82693229912318ec8f7253f63fb51e56"]
+
+# set up a client to talk to the Twilio REST API
+client = Twilio::REST::Client.new(account_sid, auth_token)
+
 weeks_table = DB.from(:weeks)
 classes_table = DB.from(:classes)
 rsvps_table = DB.from(:rsvps)
@@ -31,7 +38,20 @@ end
 get "/" do 
     @weeks = weeks_table.all
     puts @weeks.inspect
-    view "weeks"
+
+results_hq = Geocoder.search("347 West Chestnut Street, Chicago, IL 60610")
+@lat_long_hq = results_hq.first.coordinates.join(",")
+
+results_bos = Geocoder.search("101 Warren Street, Charlestown, MA 02129")
+@lat_long_bos = results_bos.first.coordinates.join(",")
+
+results_ny = Geocoder.search("158 Johnson Ave, Brooklyn, NY 11206")
+@lat_long_ny = results_ny.first.coordinates.join(",")
+
+results_la = Geocoder.search("616 N Flores St, West Hollywood, CA 90048")
+@lat_long_la = results_bos.first.coordinates.join(",")
+
+view "weeks"
 end
 
 # Show a single week and events scheduled by day of week
@@ -69,7 +89,15 @@ post "/weeks/:id/class/:class_id/rsvps/create" do
     @rsvps = rsvps_table.where(:class_id => params["class_id"]).to_a
     @count = rsvps_table.where(:class_id => params["class_id"], :going => true).count
     puts params.inspect
-    view "create_rsvp"
+
+# send the SMS from your trial Twilio number to your verified non-Twilio number
+client.messages.create(
+ from: "+12029315488", 
+ to: "+9789794827",
+ body: "Thanks for the RSVP!"
+)
+
+view "create_rsvp"
 end 
 
 # Form to create a new performance stat input
@@ -136,17 +164,3 @@ get "/logout" do
     session[:user_id] = nil
     view "logout"
 end
-
-# read your API credentials from environment variables
-account_sid = ENV["AC6bc82340e33c7c4f6d919b912ca14f68"]
-auth_token = ENV["82693229912318ec8f7253f63fb51e56"]
-
-# set up a client to talk to the Twilio REST API
-client = Twilio::REST::Client.new(account_sid, auth_token)
-
-# send the SMS from your trial Twilio number to your verified non-Twilio number
-client.messages.create(
- from: "+12029315488", 
- to: "+9789794827",
- body: "Hey KIEI-451!"
-)

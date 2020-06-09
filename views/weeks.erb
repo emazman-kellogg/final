@@ -4,3 +4,56 @@
     <li><a href="/weeks/<%= weekx[:id] %>"><%= weekx[:name] %></a></li>
     <% end %>
 </ul>
+
+<div class="row">
+<h3>Locations of our community leaders</h3>
+<p> 
+</div>
+ 
+<div class="row">
+<div class="col text-center">
+<h4>Headquarters - Chicago, IL</h4>
+<iframe
+  width="450"
+  height="300"
+  frameborder="0" 
+  style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtovsQvkIUWlNqtYwXY87gEd4ZSmJEhMw&q=<%= @lat_long_hq %>&zoom=6" allowfullscreen>
+</iframe>
+</div>
+
+<div class="col text-center">
+<h4>Satellite Office - Boston, MA </h4>
+<iframe
+  width="450"
+  height="300"
+  frameborder="0" 
+  style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtovsQvkIUWlNqtYwXY87gEd4ZSmJEhMw&q=<%= @lat_long_bos %>&zoom=6" allowfullscreen>
+</iframe>
+</div>
+</div>
+
+<div class="row">
+<div class="col text-center">
+<h4>Satellite Office - New York, NY</h4>
+<iframe
+  width="450"
+  height="300"
+  frameborder="0" 
+  style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtovsQvkIUWlNqtYwXY87gEd4ZSmJEhMw&q=<%= @lat_long_ny %>&zoom=6" allowfullscreen>
+</iframe>
+</div>
+
+<div class="col text-center">
+<h4>Satellite Office - Los Angeles, CA </h4>
+<iframe
+  width="450"
+  height="300"
+  frameborder="0" 
+  style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCtovsQvkIUWlNqtYwXY87gEd4ZSmJEhMw&q=<%= @lat_long_la %>&zoom=6" allowfullscreen>
+</iframe>
+</div>
+</div>
