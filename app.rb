@@ -136,3 +136,17 @@ get "/logout" do
     session[:user_id] = nil
     view "logout"
 end
+
+# read your API credentials from environment variables
+account_sid = ENV["AC6bc82340e33c7c4f6d919b912ca14f68"]
+auth_token = ENV["82693229912318ec8f7253f63fb51e56"]
+
+# set up a client to talk to the Twilio REST API
+client = Twilio::REST::Client.new(account_sid, auth_token)
+
+# send the SMS from your trial Twilio number to your verified non-Twilio number
+client.messages.create(
+ from: "+12029315488", 
+ to: "+9789794827",
+ body: "Hey KIEI-451!"
+)
