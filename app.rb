@@ -88,15 +88,9 @@ post "/weeks/:id/class/:class_id/rsvps/create" do
     @class = classes_table.where(:id => params["class_id"]).to_a[0]
     @users_table = users_table
     @rsvps = rsvps_table.where(:class_id => params["class_id"]).to_a
-    @count = rsvps_table.where(:class_id => params["class_id"], :going => true).count
     puts params.inspect
 
 # send the SMS from your trial Twilio number to your verified non-Twilio number
-client.messages.create(
- from: "+12029315488", 
- to: "+9789794827",
- body: "Thanks for the RSVP!"
-)
 
 view "create_rsvp"
 end 
