@@ -1,0 +1,2 @@
+The goal of this website is to enhance my fiance's current Peloton workout club process. During quarantine, several of our friends purchased Peloton bike and ride together every morning. At the moment, he + a few others (community leaders) choose classes for the week and text them via individual group chats. It's super fun for him but also a lot to manage. This will help!  
+Live website: https://fast-ridge-80755.herokuapp.com/
